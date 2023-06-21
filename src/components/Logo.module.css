@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 55.25px;
+}
+
+.logo span {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.logo img {
+  width: 55.25px;
+}
