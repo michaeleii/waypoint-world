@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import styles from "./Logo.module.css";
 
 function Logo() {
   return (
-    <div className={styles.logo}>
+    <Link to="/" className={styles.logo}>
       <img src="/icon.png" alt="Waypoint World logo" />
       <span>Waypoint World</span>
-    </div>
+    </Link>
   );
 }
 
