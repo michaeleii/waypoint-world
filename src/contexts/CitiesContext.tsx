@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 import CityData from "../interfaces/City";
 
 const BASE_URL = "http://localhost:8000";
@@ -65,19 +71,25 @@ function useStoreData() {
     reducer,
     intialState
   );
-  async function getCity(id: string) {
-    try {
+
+  const getCity = useCallback(
+    async function getCity(id: string) {
+      if (Number(id) === currentCity?.id) return;
       dispatch({ type: "loading" });
-      const response = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await response.json();
-      dispatch({ type: "city/loaded", payload: data });
-    } catch (err) {
-      dispatch({
-        type: "rejected",
-        payload: "There was an error loading data...",
-      });
-    }
-  }
+      try {
+        const response = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await response.json();
+        dispatch({ type: "city/loaded", payload: data });
+      } catch (err) {
+        dispatch({
+          type: "rejected",
+          payload: "There was an error loading data...",
+        });
+      }
+    },
+    [currentCity?.id]
+  );
+
   async function createCity(newCity: {
     cityName: string;
     country: string;
