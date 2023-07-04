@@ -3,6 +3,7 @@ import styles from "./CityItem.module.css";
 import { formatDate } from "../helpers/formatDate";
 import { Link } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
+import { flagEmojiToImg } from "../helpers/flagEmojiToImg";
 
 function CityItem({ city }: { city: CityData }) {
   const { currentCity, deleteCity } = useCities();
@@ -21,7 +22,7 @@ function CityItem({ city }: { city: CityData }) {
           id === currentCity?.id ? styles["cityItem--active"] : ""
         }`}
       >
-        <span className={styles.emoji}>{emoji}</span>
+        <span className={styles.emoji}>{flagEmojiToImg(emoji)}</span>
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>{formatDate(date)}</time>
         <form>

@@ -6,6 +6,7 @@ import BackButton from "./BackButton";
 import { useCities } from "../contexts/CitiesContext";
 import { useEffect } from "react";
 import Spinner from "./Spinner";
+import { flagEmojiToImg } from "../helpers/flagEmojiToImg";
 
 function City() {
   const { id } = useParams();
@@ -26,7 +27,7 @@ function City() {
       <div className={styles.row}>
         <h6>City name</h6>
         <h3>
-          <span>{emoji}</span> {cityName}
+          <span>{flagEmojiToImg(emoji)}</span> {cityName}
         </h3>
       </div>
 

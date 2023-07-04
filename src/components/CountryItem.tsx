@@ -1,3 +1,4 @@
+import { flagEmojiToImg } from "../helpers/flagEmojiToImg";
 import styles from "./CountryItem.module.css";
 
 function CountryItem({
@@ -7,7 +8,7 @@ function CountryItem({
 }) {
   return (
     <li className={styles.countryItem}>
-      <span>{country.emoji}</span>
+      {flagEmojiToImg(country.emoji)}
       <span>{country.country}</span>
     </li>
   );
