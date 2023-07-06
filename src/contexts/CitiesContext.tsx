@@ -7,7 +7,8 @@ import {
 } from "react";
 import CityData from "../interfaces/City";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL =
+  "https://my-json-server.typicode.com/michaeleii/waypoint-world/";
 
 type useStoreDataReturnType = ReturnType<typeof useStoreData>;
 

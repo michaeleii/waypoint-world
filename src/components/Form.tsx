@@ -1,5 +1,3 @@
-// "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
-
 interface CityD {
   latitude: number;
   longitude: number;
@@ -40,7 +38,6 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./Form.module.css";
 import Button from "./Button";
-import { formatDate } from "../helpers/formatDate";
 import BackButton from "./BackButton";
 import { useURLPosition } from "../hooks/useURLPosition";
 import { convertToEmoji } from "../helpers/convertToEmoji";
