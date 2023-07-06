@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "json-server --watch data/db.json --port 8000 --delay 500"
+    "server": "json-server --watch db.json --port 8000 --delay 500"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.3",
